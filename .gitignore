@@ -1,0 +1,7 @@
+# Intellij
+.idea/
+threegppvalidator.iml
+
+# Java
+target/
+
