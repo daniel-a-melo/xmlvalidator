@@ -13,9 +13,7 @@ public class DataHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes)
             throws SAXException {
-        if (tagsToFind.contains(qName)) {
-            tagsToFind.setTagFound(qName);
-        }
+        tagsToFind.checkTag(qName);
     }
 
     public void setTagsToFind(TagsToFind tagsToFind) {

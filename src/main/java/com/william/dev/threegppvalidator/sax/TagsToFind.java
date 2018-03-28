@@ -1,6 +1,7 @@
 package com.william.dev.threegppvalidator.sax;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -16,12 +17,10 @@ public class TagsToFind {
         }
     }
 
-    public boolean contains(String tag) {
-        return tagSearchResults.containsKey(tag);
-    }
-
-    public void setTagFound(String tag) {
-        tagSearchResults.put(tag, true);
+    public void checkTag(String tag) {
+        if (tagSearchResults.containsKey(tag)) {
+            tagSearchResults.put(tag, true);
+        }
     }
 
     public Map<String, Boolean> getTagSearchResults() {
