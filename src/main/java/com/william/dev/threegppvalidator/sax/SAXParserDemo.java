@@ -20,12 +20,12 @@ public class SAXParserDemo {
             SAXParser saxParser = factory.newSAXParser();
 
             DataHandler dataHandler = new DataHandler();
-            TagsToFind tagsToFind = new TagsToFind("CoordGeom", "InstrumentPoint", "TargetPoint");
-            dataHandler.setTagsToFind(tagsToFind);
+            TagsToValidate tagsToValidate = new TagsToValidate("CoordGeom", "InstrumentPoint", "TargetPoint");
+            dataHandler.setTagsToValidate(tagsToValidate);
             saxParser.parse(inputFile, dataHandler);
 
-            Map<String, Boolean> tagSearchResults = tagsToFind.getTagSearchResults();
-            assertAllTagsFound(tagSearchResults);
+            Map<String, Boolean> tagValidateResults = tagsToValidate.getTagValidateResults();
+            assertAllTagsFound(tagValidateResults);
         } catch (Exception e) {
             e.printStackTrace();
         }

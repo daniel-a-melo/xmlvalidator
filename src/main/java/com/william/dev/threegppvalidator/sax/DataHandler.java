@@ -8,15 +8,14 @@ import org.xml.sax.helpers.DefaultHandler;
  * Created by william on 19/03/18.
  */
 public class DataHandler extends DefaultHandler {
-    private TagsToFind tagsToFind;
+    private TagsToValidate tagsToValidate;
 
-    @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes)
-            throws SAXException {
-        tagsToFind.checkTag(qName);
+    public void setTagsToValidate(TagsToValidate tagsToValidate) {
+        this.tagsToValidate = tagsToValidate;
     }
 
-    public void setTagsToFind(TagsToFind tagsToFind) {
-        this.tagsToFind = tagsToFind;
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        tagsToValidate.checkTag(qName);
     }
 }
